@@ -1,3 +1,5 @@
+require 'byebug'
+
 class ApplicationController < ActionController::API
   include ActionController::Cookies
   rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
@@ -6,6 +8,7 @@ class ApplicationController < ActionController::API
 
   private
   def authorize
+    # byebug
     @current_user = User.find_by(id: session[:user_id])
     render json: { errors: ["Not authorized"] }, status: :unauthorized unless @current_user
   end

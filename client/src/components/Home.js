@@ -10,16 +10,16 @@ function Home(){
     console.log('home line 9', user)
     // console.log(user.username)
 
-    useEffect(async() => {
-        // auto-login
-        await fetch("/me").then((r) => {
-          if (r.ok) {
-            r.json().then((user) => {
-              setUser(user)
-            });
-          }
-        });
-      }, []);
+    // useEffect(async() => {
+    //     // auto-login
+    //     await fetch("/me").then((r) => {
+    //       if (r.ok) {
+    //         r.json().then((user) => {
+    //           setUser(user)
+    //         });
+    //       }
+    //     });
+    //   }, []);
 
 
     return (

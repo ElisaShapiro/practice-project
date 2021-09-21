@@ -17,6 +17,7 @@ function Login({ setUser } ){
 
     function handleSubmit(event) {
         event.preventDefault()
+        // debugger
         fetch('/login', {
             method: "POST",
             headers: {
@@ -27,6 +28,7 @@ function Login({ setUser } ){
         .then(resp => resp.json())
         .then(data => {
             if(data.error) {
+                // debugger
                 alert(data.error)
             } else {
                 setUser(data)

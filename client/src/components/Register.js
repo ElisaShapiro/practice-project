@@ -24,6 +24,7 @@ function Register({ setUser }){
             password: formData.password,
             password_confirmation: formData.password_confirmation
         }
+        console.log('usercreate',data)
         fetch('/signup', {
             method: "POST",
             headers: {
@@ -53,9 +54,9 @@ function Register({ setUser }){
             <label htmlFor="email">Email:</label><br/>
             <input type="text" name="email" className="input-field" id="email" value={formData.email} onChange={handleChange} /><br/><br/>
             <label htmlFor="password">Password:</label><br/>
-            <input type="password" name="pass" className="input-field" id="password" value={formData.pass} onChange={handleChange} /><br/><br/>
+            <input type="password" name="password" className="input-field" id="password" value={formData.password} onChange={handleChange} /><br/><br/>
             <label htmlFor="confPass">Confirm Password:</label><br/>
-            <input type="password" name="confPass" className="input-field" id="confPass" value={formData.confPass} onChange={handleChange} /><br/><br/>
+            <input type="password" name="password_confirmation" className="input-field" id="password_confirmation" value={formData.password_confirmation} onChange={handleChange} /><br/><br/>
             <button type="submit" style={{ borderRadius: "30px" }} >Submit</button>
         </form>
         </div>
