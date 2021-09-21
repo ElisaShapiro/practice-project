@@ -6,8 +6,9 @@ import Navbar from './Navbar'
 
 function Home(){
     const [user, setUser ] = useState(null)
+    const [notes, setNotes] = useState([])
 
-    console.log('home line 9', user)
+    // console.log('home line 9', user)
     // console.log(user.username)
 
     // useEffect(async() => {
@@ -21,11 +22,24 @@ function Home(){
     //     });
     //   }, []);
 
+    //   useEffect(()=> {
+    //       fetch('/notes')
+    //       .then(res => res.json())
+    //       .then(data => setNotes(data))
+    //   }, [])
+    //   console.log('notes 30', notes)
+    //   const notesMap = notes.map((note) => {
+    //     return <div><h2>{note.title}</h2><small> on {note.category}</small><p>{note.content}</p></div>}
+    // })
 
     return (
         <div>
             <Navbar user={user} setUser={setUser}/>
-            <h1> {user ? "you're logged in" : "go log in"}</h1>
+            {user ? 
+            // {notesMap}
+            <h1> "you're logged in"</h1>
+            : 
+            <h1> "go log in"</h1>}
             <Switch>
                 <Route exact path="/">
                 </Route>
